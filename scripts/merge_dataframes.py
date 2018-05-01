@@ -1,6 +1,7 @@
 # Load libraries
 import pandas as pd
 import boto3
+from io import StringIO
 
 print('Loading data...')
 # Load in labeled data: df_labeled
@@ -23,4 +24,4 @@ df_merged.to_csv(csv_buffer)
 s3_resource = boto3.resource('s3')
 s3_resource.Object(clcarver.kiva, 'df_merged.csv').put(Body=csv_buffer.getvalue())
 
-print("Done. 'df_2010' and 'df_merged' saved to data directory")
+print("Done. 'df_2010' and 'df_merged' saved to s3 clcarver.kiva bucket")

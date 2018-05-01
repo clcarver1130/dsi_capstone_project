@@ -16,7 +16,7 @@ df_rename =  df_select.rename(columns=str.title)
 
 # Replace values such as "woman, woman, woman, man" with "group"
 df_rename['Borrower_Genders'] = [
-    elem if elem in ['female','male'] else 'group' for elem in df_select['Borrower_Genders']]
+    elem if elem in ['female','male'] else 'group' for elem in df_rename['Borrower_Genders']]
 
 print('Data cleaned')
 

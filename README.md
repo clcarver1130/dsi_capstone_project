@@ -1,4 +1,3 @@
-![alt text](https://goo.gl/images/M9Domh)
 
 # Defending Credit for the World's Poor
 

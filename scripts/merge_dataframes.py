@@ -6,7 +6,7 @@ print('Loading data...')
 df_labeled = pd.read_csv('../raw_data/kiva_scraping.csv')
 
 # Load in unlabeled data: df_unlabel
-df_unlabel = pd.read_csv('..data/loans.csv')
+df_unlabel = pd.read_csv('../raw_data/loans.csv')
 
 # Pull out just the 2010 data. Save it to a CSV: df_2010
 df_2010 = df_labeled[df_labeled['Funded Date.year'] == 2010]

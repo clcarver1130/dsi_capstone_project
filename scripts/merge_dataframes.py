@@ -3,7 +3,7 @@ import pandas as pd
 import boto
 
 # Connect to s3 bucket: clcarver.kiva
-conn = boto.connect_s3()
+conn = boto.connect_s3('SECRET KEYS')
 bucket = conn.get_bucket('clcarverloans')
 
 print('Loading data...')

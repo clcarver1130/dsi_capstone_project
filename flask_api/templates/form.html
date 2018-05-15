@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+  </head>
+  <header>
+    <h1>Microfinance Credit Risk API</h1>
+  </header>
+  <body>
+  <form class="" action="/predict" method="post">
+    <select>
+      <option value="female">Female</option>
+      <option value="male">Male</option>
+      <option value="group">Group</option>
+    </select>
+    <br>
+    <input type="text" name="Country Code" value="" placeholder="2-Digit Country Code">
+    <br>
+    <input type="text" name="Amount" value="" placeholder="Loan Amount ($)">
+    <br>
+    <input type="text" name="Term" value="" placeholder="Loan Term (months)">
+    <br>
+    <select>
+      <option value="monthly">Monthly</option>
+      <option value="irregular">Irregular</option>
+      <option value="bullet">Bullet</option>
+    </select>
+    <br>
+    <input type="text" name="Sector" value="" placeholder="Sector">
+    <br>
+    <input type="text" name="Activity" value="" placeholder="Activity">
+    <br>
+    <input type="text" name="Use" value="" placeholder="Description of Loan Use">
+    <br>
+    <button type="submit" name="button">Calculate Likelihood of Default</button>
+  </form>
+  </body>
+</html>

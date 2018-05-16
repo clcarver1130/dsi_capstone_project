@@ -25,7 +25,6 @@
       }
       .container{
         display: inline;
-        border:1px solid black;
         height: 500px;
         width: 100%;
         text-align: left;
@@ -43,16 +42,15 @@
         -webkit-box-shadow: 3px 2px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
         -moz-box-shadow:    3px 2px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
         box-shadow:         3px 2px 2px 2px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-        margin-top: 1em;
+        padding:0 !important;
       }
 
       input[type=text], select, textarea{
-    width: 30%;
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-top:2em;
     resize: vertical;
     margin-bottom: 4px;
 
@@ -63,6 +61,7 @@
   }
   label{
     font-size: 24px;
+    margin-top: 1em;
   }
   input, label{
     display: block;
@@ -73,6 +72,25 @@
     -webkit-box-shadow: 3px 2px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    3px 2px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
     box-shadow:         3px 2px 2px 2px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+  button{
+    width: 200px;
+    height: 50px;
+    background: #4286f4;
+    color: white;
+    margin-top: 1em;
+    border: none;
+    cursor: pointer;
+  }
+  form{
+    display:inline-block;
+    margin-left: 10px;
+  }
+  .idk{
+    display:inline-block;
+    vertical-align: top;
+    margin-left: 10%;
+    font-size: 20px;
   }
     </style>
 
@@ -85,7 +103,6 @@
     <h1 class='MicroFinance'>Loan Default Predictor</h1>
   </div>
   <body>
-    <div className='divider'>
   <form class="" action="/" method="post">
     <label>Gender</label>
     <select>
@@ -132,10 +149,11 @@
     <button   onSubmit="onSubmit()"
      type="submit" name="button">Calculate Likelihood of Default</button>
   </form>
-</div>
-  </div>
   <div class="idk">
-    {{ prediction }}
+    <h4>Likelihood of Loan Defaulting:</h4>
+    <h3>{{ prediction }}</h3>
   </div>
+</div>
+
   </body>
 </html>

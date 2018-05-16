@@ -3,37 +3,139 @@
   <head>
     <meta charset="utf-8">
 
+    <script>
+    function onSubmit(e){
+      e.preventDefault();
+    }
+
+    </script>
+
+    <style>
+
+    body,html{
+      height: 100%;
+      background: #e8e8e8;
+      margin: 0;
+      font-family: "Expert-Sans-Light","Helvetica",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    }
+      .MicroFinance{
+        font-size: 50px;
+      }
+      .container{
+        display: inline;
+        border:1px solid black;
+        height: 500px;
+        width: 100%;
+        text-align: left;
+
+      }
+      .divider{
+        margin-top:100px;
+        margin-left: 40px;
+      }
+      select{
+        width:130px;
+        height: 25px;
+        border:none;
+        background: white;
+        -webkit-box-shadow: 3px 2px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow:    3px 2px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
+        box-shadow:         3px 2px 2px 2px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+        margin-top: 1em;
+      }
+
+      input[type=text], select, textarea{
+    width: 30%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top:2em;
+    resize: vertical;
+    margin-bottom: 4px;
+
+
+  }
+  .dunno{
+    text-align: center;
+  }
+  label{
+    font-size: 24px;
+  }
+  input, label{
+    display: block;
+  }
+  .header{
+    height: 75px;
+    background: #4286f4;
+    -webkit-box-shadow: 3px 2px 2px 2px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 2px 2px 2px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 2px 2px 2px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+    </style>
+
   </head>
-  <header>
-    <h1>Microfinance Credit Risk API</h1>
+  <header class='header'>
+
   </header>
+    <div class='container'>
+      <div class='dunno'>
+    <h1 class='MicroFinance'>Loan Default Predictor</h1>
+  </div>
   <body>
-  <form class="" action="/predict" method="post">
+    <div className='divider'>
+  <form class="" action="/" method="post">
+    <label>Gender</label>
     <select>
       <option value="female">Female</option>
       <option value="male">Male</option>
       <option value="group">Group</option>
     </select>
-    <br>
+    <label>Country</label>
     <input type="text" name="Country Code" value="" placeholder="2-Digit Country Code">
-    <br>
+
+
+
+
+
+    <label>Loan Amount</label>
+
     <input type="text" name="Amount" value="" placeholder="Loan Amount ($)">
-    <br>
+
+
+    <label>Loan Term</label>
+
     <input type="text" name="Term" value="" placeholder="Loan Term (months)">
-    <br>
+
+    <label>Repayment interval</label>
+
     <select>
       <option value="monthly">Monthly</option>
       <option value="irregular">Irregular</option>
       <option value="bullet">Bullet</option>
     </select>
-    <br>
+
+    <label>Loan Sector</label>
+
     <input type="text" name="Sector" value="" placeholder="Sector">
-    <br>
+
+    <label>Activity Group</label>
+
     <input type="text" name="Activity" value="" placeholder="Activity">
-    <br>
+
+    <label>Description</label>
+
     <input type="text" name="Use" value="" placeholder="Description of Loan Use">
-    <br>
-    <button type="submit" name="button">Calculate Likelihood of Default</button>
+
+    <button   onSubmit="onSubmit()"
+     type="submit" name="button">Calculate Likelihood of Default</button>
   </form>
+</div>
+  </div>
+  <div class="idk">
+    {{ prediction }}
+  </div>
   </body>
 </html>

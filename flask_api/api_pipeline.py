@@ -40,6 +40,6 @@ def predict_default(json):
     with open('../scripts/final_model.pkl', 'rb') as input:
         model = pickle.load(input)
         pred = model.predict_proba(final_df)[:, 1]
-        pred_str = str(pred[0] * 100) + '%'
+        pred_str = str(round(pred[0] * 100, 2)) + '%'
 
     return pred_str
